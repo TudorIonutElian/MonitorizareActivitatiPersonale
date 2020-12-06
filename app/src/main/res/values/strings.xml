@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">Monitorizare Activitati Personale</string>
+    <string name="start_aplicatie">Start Aplicatie</string>
+    <string name="logo">Logo</string>
+    <string name="setari">Setari</string>
+    <string name="titleSetari">Pagina de Setari</string>
+    <string name="titleMonitorizare">Gestionare date MAP</string>
+    <string name="titleAdaugare">Adaugare date MAP</string>
+    <string name="titleArhivare">Arhivare date MAP</string>
+    <string name="titleImagini">Generare Imagini date MAP</string>
+    <string name="imagine_map">Imagine MAP</string>
+    <string name="adaugare_map">Adaugare MAP</string>
+    <string name="arhivare_map">Arhivare MAP</string>
+    <string name="vizualizare_map">Vizualizare MAP</string>
+    <string name="generare_imagine">Generare Imagine</string>
+    <string name="titleVizualizare">Vizualizare MAP</string>
+    <string name="data_adaugarii">Data adaugarii</string>
+    <string name="numar_kg">Numar KG</string>
+    <string name="numar_ore_sport">Numar Ore Sport</string>
+    <string name="numar_ore_odihna">Numar Ore Odihna</string>
+    <string name="numar_calorii_consumate">Numar Calorii Consumate</string>
+    <string name="info_adaugare">ADAUGARE DATE</string>
+    <string name="nr_kg">Kilograme</string>
+    <string name="coeficient_date">Coeficient Date</string>
+    <string name="adaugare_valori_map">Adaugare Valori MAP</string>
+    <string name="salveaza_kg">Salveaza KG</string>
+    <string name="setari_text">Setari Aplicatie</string>
+    <string name="switch_text">NU</string>
+    <string name="salvati_kg">Salvati KG?</string>
+    <string name="salvati_numar_ore_sport">Salvati Numar Ore Sport?</string>
+    <string name="salvati_numar_ore_odihna">Salvati Numar Ore Odihna?</string>
+    <string name="salvati_numar_calorii">Salvati Numar Calorii</string>
+    <string name="salveaza_setari">Salveaza Setari</string>
+    <string name="reseteaza_setari">Reseteaza Setari</string>
+
+
+    <string name="shared_preferences">shared_preferences</string>
+    <string name="salveaza_kilograme">salveaza_kilograme</string>
+    <string name="salveaza_sport">salveaza_sport</string>
+    <string name="salveaza_odihna">salveaza_odihna</string>
+    <string name="salveaza_calorii">salveaza_calorii</string>
+
+
+</resources>

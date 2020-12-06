@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Setari">
+
+    <Switch
+        android:id="@+id/switchCalorii"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="84dp"
+        android:text="@string/switch_text"
+        android:textColor="@android:color/holo_orange_dark"
+        app:layout_constraintEnd_toStartOf="@+id/setariRightGuide"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toEndOf="@+id/txtNumarOreSport"
+        app:layout_constraintTop_toBottomOf="@+id/switchOreSport" />
+
+    <TextView
+        android:id="@+id/textNumarCalorii"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/salvati_numar_calorii"
+        app:layout_constraintEnd_toStartOf="@+id/setari70Guide"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/setariLeftGuide"
+        app:layout_constraintTop_toBottomOf="@+id/txtNumarOreOdihna" />
+
+    <Switch
+        android:id="@+id/switchOreOdihna"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="34dp"
+        android:text="@string/switch_text"
+        android:textColor="@android:color/holo_orange_dark"
+        app:layout_constraintEnd_toStartOf="@+id/setariRightGuide"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toEndOf="@+id/txtNumarOreSport"
+        app:layout_constraintTop_toBottomOf="@+id/switchOreSport" />
+
+    <TextView
+        android:id="@+id/txtNumarOreOdihna"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/salvati_numar_ore_odihna"
+        app:layout_constraintEnd_toStartOf="@+id/setari70Guide"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/setariLeftGuide"
+        app:layout_constraintTop_toBottomOf="@+id/txtNumarOreSport" />
+
+    <Switch
+        android:id="@+id/switchOreSport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/switch_text"
+        android:textColor="@android:color/holo_orange_dark"
+        app:layout_constraintEnd_toStartOf="@+id/setariRightGuide"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toEndOf="@+id/txtNumarOreSport"
+        app:layout_constraintTop_toBottomOf="@+id/swithcKG" />
+
+    <TextView
+        android:id="@+id/txtNumarOreSport"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/salvati_numar_ore_sport"
+        app:layout_constraintEnd_toStartOf="@+id/setari70Guide"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/setariLeftGuide"
+        app:layout_constraintTop_toBottomOf="@+id/txtNumarKilograme" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/setariRightGuide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/setariLeftGuide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05109489" />
+
+    <TextView
+        android:id="@+id/txtSetariAplicatie"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/setari_text"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/setariRightGuide"
+        app:layout_constraintStart_toStartOf="@+id/setariLeftGuide"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/setari70Guide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.6" />
+
+    <Button
+        android:id="@+id/btnReseteazaValori"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="164dp"
+        android:background="@color/colorRed"
+        android:text="@string/reseteaza_setari"
+        android:textColor="@android:color/background_light"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/setariRightGuide"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/setariLeftGuide"
+        app:layout_constraintTop_toBottomOf="@+id/textNumarCalorii" />
+
+    <TextView
+        android:id="@+id/txtNumarKilograme"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/salvati_kg"
+        app:layout_constraintEnd_toStartOf="@+id/setari70Guide"
+        app:layout_constraintStart_toStartOf="@+id/setariLeftGuide"
+        app:layout_constraintTop_toBottomOf="@+id/txtSetariAplicatie" />
+
+    <Switch
+        android:id="@+id/swithcKG"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/switch_text"
+        android:textColor="@android:color/holo_orange_dark"
+        app:layout_constraintEnd_toStartOf="@+id/setariRightGuide"
+        app:layout_constraintStart_toStartOf="@+id/setari70Guide"
+        app:layout_constraintTop_toBottomOf="@+id/txtSetariAplicatie" />
+
+    <Button
+        android:id="@+id/btnSalvareSetari"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:background="@color/colorGreen"
+        android:text="@string/salveaza_setari"
+        android:textColor="@android:color/background_light"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/setariRightGuide"
+        app:layout_constraintStart_toStartOf="@+id/setariLeftGuide"
+        app:layout_constraintTop_toBottomOf="@+id/textNumarCalorii" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
