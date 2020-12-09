@@ -83,7 +83,7 @@ public class Adaugare extends AppCompatActivity {
 
         setareDataCurenta();
         this.coeficientDate.setText(Double.toString(valoareCoeficient));
-
+        
         // Actualizare numar de kilograme
         this.kilograme.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             private int numarKilograme;
@@ -179,11 +179,8 @@ public class Adaugare extends AppCompatActivity {
         valoareCaloriiConsumate = preferences.getInt("numar_calorii", 0);
 
         actualizareCoeficient();
-
-        Log.d("Numar ore odihna", preferences.getInt("numar_ore_odihna", 0) + "");
-        Log.d("Numar calorii", preferences.getInt("numar_ore_calorii", 0) + "");
-
     }
+
     public void salveazaValoriMAP(){
         SharedPreferences preferences = getSharedPreferences(shared_preferences, MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
@@ -218,6 +215,12 @@ public class Adaugare extends AppCompatActivity {
 
         editor.commit();
         Toast.makeText(getApplicationContext(), "Valorile au fost salvate", Toast.LENGTH_LONG).show();
+        Date c = Calendar.getInstance().getTime();
+        SimpleDateFormat df = new SimpleDateFormat("dd-M-yyyy", Locale.getDefault());
+        String formattedDate = df.format(c);
+
+        ActivitatePersonala activitatePersonala = new ActivitatePersonala(c, valoareKilograme, valoareOreSport, valoareOreOdihna, valoareCaloriiConsumate, valoareCoeficient);
+        Log.d("Activitate: ", activitatePersonala.toString() + "");
     }
     /* Functie pentru actualizare coeficient */
 
