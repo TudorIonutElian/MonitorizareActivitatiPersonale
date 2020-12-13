@@ -9,10 +9,11 @@ import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 
-public class DBSQLiteHelper extends SQLiteOpenHelper {
+public class DatabaseHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "map.db";
     public static final String MAP_TABLE_NAME = "map_table";
@@ -27,20 +28,21 @@ public class DBSQLiteHelper extends SQLiteOpenHelper {
 
     private HashMap hp;
 
-    public DBSQLiteHelper(Context context) {
-        super(context, DATABASE_NAME , null, 1);
+    public DatabaseHelper(Context context) {
+        super(context, "map.db" , null, 1);
     }
 
-    public DBSQLiteHelper(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
+    public DatabaseHelper(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
+        SQLiteDatabase db = this.getWritableDatabase();
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
         // TODO Auto-generated method stub
         db.execSQL(
-                "create table MAP_TABLE_NAME " +
-                        "(MAP_COLUMN_ID integer primary key, MAP_COLUMN_DATE date, MAP_COLUMN_KG integer, MAP_COLUMN_SPORT integer, MAP_COLUMN_ODIHNA integer, MAP_COLUMN_CALORII integer, MAP_COLUMN_COEFCIENT decimal(2,2))"
+                "create table 'map_data' " +
+                        "('id' integer primary key, 'data' date, 'kg' integer, 'sport' integer, 'odihna' integer, 'calorii' integer, 'coeficient' decimal(2,2))"
         );
     }
 
@@ -51,21 +53,10 @@ public class DBSQLiteHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean insertInregistrare (String name, String phone, String email, String street,String place) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put("name", name);
-        contentValues.put("phone", phone);
-        contentValues.put("email", email);
-        contentValues.put("street", street);
-        contentValues.put("place", place);
-        db.insert(MAP_TABLE_NAME, null, contentValues);
-        return true;
-    }
 
     public Cursor getData(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor res =  db.rawQuery( "select * from contacts where id="+id+"", null );
+        Cursor res =  db.rawQuery( "select * from map_data where id="+id+"", null );
         return res;
     }
 
@@ -89,7 +80,7 @@ public class DBSQLiteHelper extends SQLiteOpenHelper {
         return true;
     }
 
-    public Integer deleteContact (Integer id) {
+    public Integer deleteAdaugare (Integer id) {
         SQLiteDatabase db = this.getWritableDatabase();
         return db.delete(MAP_TABLE_NAME,
                 "id = ? ",
@@ -109,5 +100,31 @@ public class DBSQLiteHelper extends SQLiteOpenHelper {
             res.moveToNext();
         }
         return array_list;
+    }
+
+    public boolean inserareActivitate(ActivitatePersonala activitatePersonala){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentActivitate = new ContentValues();
+
+        contentActivitate.put("data", activitatePersonala.getData_adaugarii().toString());
+        contentActivitate.put("kg", activitatePersonala.getNumar_kilograme());
+        contentActivitate.put("sport", activitatePersonala.getNumar_ore_sport());
+        contentActivitate.put("odihna", activitatePersonala.getNumar_ore_odihna());
+        contentActivitate.put("calorii", activitatePersonala.getNumar_calorii_consumate());
+        contentActivitate.put("coeficient", activitatePersonala.getValoare_coeficient());
+        long rezultat = 0;
+        try{
+           rezultat = db.insert("map_data", null, contentActivitate);
+        }catch (Exception ex){
+            Log.d("Excep", ex.getMessage());
+        }
+        if(rezultat == 0){
+            Log.d("Inserare: ", "OK");
+            return true;
+        }else{
+            Log.d("Inserare: ", "Eroare");
+            return false;
+        }
+
     }
 }

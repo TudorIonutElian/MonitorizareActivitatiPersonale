@@ -6,14 +6,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     // Identificare elemente pe pagina de pornire
     private Button mBtnStartApp;
     private Button mBtnSetari;
-    DBSQLiteHelper bazadate;
+    DatabaseHelper bazadate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         setTitle(R.string.app_name);
-        bazadate = new DBSQLiteHelper(this);
+        bazadate = new DatabaseHelper(this);
 
         // Alocare elemente de pe prima pagina
         mBtnStartApp = (Button) findViewById(R.id.btnStart);

@@ -37,6 +37,8 @@ public class Adaugare extends AppCompatActivity {
     private Button buttonAdaugare;
     private Button buttonPreluare;
 
+    private DatabaseHelper bazaDate;
+
 
     private String shared_preferences;
 
@@ -220,7 +222,9 @@ public class Adaugare extends AppCompatActivity {
         String formattedDate = df.format(c);
 
         ActivitatePersonala activitatePersonala = new ActivitatePersonala(c, valoareKilograme, valoareOreSport, valoareOreOdihna, valoareCaloriiConsumate, valoareCoeficient);
-        Log.d("Activitate: ", activitatePersonala.toString() + "");
+
+        DatabaseHelper myDbHelper = new DatabaseHelper(this.getApplicationContext());
+        myDbHelper.inserareActivitate(activitatePersonala);
     }
     /* Functie pentru actualizare coeficient */
 
