@@ -16,7 +16,7 @@ import androidx.annotation.Nullable;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "map.db";
-    public static final String MAP_TABLE_NAME = "map_table";
+    public static final String MAP_TABLE_NAME = "map_data";
     public static final String MAP_COLUMN_ID = "id";
     public static final String MAP_COLUMN_DATE = "data_adaugarii";
     public static final String MAP_COLUMN_KG = "kilograme";
@@ -56,7 +56,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public Cursor getData(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor res =  db.rawQuery( "select * from map_data where id="+id+"", null );
+        Cursor res =  db.rawQuery("SELECT * FROM " + MAP_TABLE_NAME + " WHERE id = " + id, null);
         return res;
     }
 
