@@ -2,6 +2,7 @@ package com.tie.map;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
@@ -133,6 +134,16 @@ public class Vizualizare extends AppCompatActivity {
                 int id_stergere = spinner.getId();
                 databaseHelper.stergereActivitate(id_stergere);
                 Toast.makeText(getApplicationContext(), "Inregistrarea cu nr. " + id_stergere + " a fost stearsa cu succes!", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        // Setare Buton Editare
+        editeazaInregistrare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), EditareActivitate.class);
+                intent.putExtra("id_stergere", String.valueOf(spinner.getSelectedItem()));
+                startActivity(intent);
             }
         });
     }
