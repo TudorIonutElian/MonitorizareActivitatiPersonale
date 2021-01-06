@@ -1,8 +1,11 @@
 package com.tie.map;
 
 import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Locale;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -42,7 +45,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         // TODO Auto-generated method stub
         db.execSQL(
                 "create table 'map_data' " +
-                        "('id' integer primary key, 'data' date, 'kg' integer, 'sport' integer, 'odihna' integer, 'calorii' integer, 'coeficient' decimal(2,2))"
+                        "('id' integer primary key, 'data' String, 'kg' integer, 'sport' integer, 'odihna' integer, 'calorii' integer, 'coeficient' decimal(2,2))"
         );
     }
 
@@ -54,11 +57,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public Cursor getData(int id) {
+    public Cursor getData() {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor res =  db.rawQuery("SELECT * FROM " + MAP_TABLE_NAME + " WHERE id = " + id, null);
+        Cursor res =  db.rawQuery("SELECT * FROM " + MAP_TABLE_NAME , null);
         return res;
     }
+
 
     public int numberOfRows(){
         SQLiteDatabase db = this.getReadableDatabase();
@@ -66,47 +70,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return numRows;
     }
 
-    public boolean updateAdaugare (Integer id, Date data_adugare, Integer kilograme, Integer sport, Integer odihna, Integer calorii, Double coeficient) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(MAP_COLUMN_DATE, String.valueOf(data_adugare));
-        contentValues.put(MAP_COLUMN_KG, kilograme);
-        contentValues.put(MAP_COLUMN_SPORT, sport);
-        contentValues.put(MAP_COLUMN_ODIHNA, odihna);
-        contentValues.put(MAP_COLUMN_CALORII, calorii);
-        contentValues.put(MAP_COLUMN_COEFCIENT, coeficient);
-
-        db.update(MAP_TABLE_NAME, contentValues, "id = ? ", new String[] { Integer.toString(id) } );
-        return true;
-    }
-
-    public Integer deleteAdaugare (Integer id) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        return db.delete(MAP_TABLE_NAME,
-                "id = ? ",
-                new String[] { Integer.toString(id) });
-    }
-
-    public ArrayList<String> preluareToateRanduri() {
-        ArrayList<String> array_list = new ArrayList<String>();
-
-        //hp = new HashMap();
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor res =  db.rawQuery( "select * from MAP_TABLE_NAME", null );
-        res.moveToFirst();
-
-        while(res.isAfterLast() == false){
-            array_list.add(res.getString(res.getColumnIndex(MAP_COLUMN_ID)));
-            res.moveToNext();
-        }
-        return array_list;
-    }
 
     public boolean inserareActivitate(ActivitatePersonala activitatePersonala){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentActivitate = new ContentValues();
 
-        contentActivitate.put("data", activitatePersonala.getData_adaugarii().toString());
+        contentActivitate.put("data", activitatePersonala.getData_adaugarii());
         contentActivitate.put("kg", activitatePersonala.getNumar_kilograme());
         contentActivitate.put("sport", activitatePersonala.getNumar_ore_sport());
         contentActivitate.put("odihna", activitatePersonala.getNumar_ore_odihna());
@@ -119,12 +88,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             Log.d("Excep", ex.getMessage());
         }
         if(rezultat == 0){
-            Log.d("Inserare: ", "OK");
             return true;
         }else{
-            Log.d("Inserare: ", "Eroare");
             return false;
         }
 
+    }
+
+    public boolean stergereActivitate(int idStergere){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DELETE FROM 'map_data' WHERE id = "+ idStergere +"");
+        db.close();
+        return true;
     }
 }

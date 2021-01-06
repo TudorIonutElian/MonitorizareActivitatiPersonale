@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.tie.map">
 
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,15 +11,32 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Vizualizare" android:parentActivityName=".Adaugare" />
-        <activity android:name=".Imagine" android:parentActivityName=".Adaugare" />
-        <activity android:name=".Arhivare" android:parentActivityName=".Adaugare" />
-        <activity android:name=".Adaugare" android:parentActivityName=".Adaugare" />
-        <activity android:name=".Monitorizare" android:parentActivityName=".MainActivity" />
-        <activity android:name=".Setari" android:parentActivityName=".MainActivity" />
+        <activity android:name=".EditareActivitate"></activity>
+        <activity
+            android:name=".afisare_setari"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Vizualizare"
+            android:parentActivityName=".Adaugare" />
+        <activity
+            android:name=".Imagine"
+            android:parentActivityName=".Adaugare" />
+        <activity
+            android:name=".Arhivare"
+            android:parentActivityName=".Adaugare" />
+        <activity
+            android:name=".Adaugare"
+            android:parentActivityName=".Adaugare" />
+        <activity
+            android:name=".Monitorizare"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Setari"
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

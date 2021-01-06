@@ -12,6 +12,8 @@ public class MainActivity extends AppCompatActivity {
     // Identificare elemente pe pagina de pornire
     private Button mBtnStartApp;
     private Button mBtnSetari;
+    private Button mBtnAfisareSetari;
+
     DatabaseHelper bazadate;
 
     @Override
@@ -25,12 +27,21 @@ public class MainActivity extends AppCompatActivity {
         // Alocare elemente de pe prima pagina
         mBtnStartApp = (Button) findViewById(R.id.btnStart);
         mBtnSetari = (Button) findViewById(R.id.btnSetari);
+        mBtnAfisareSetari = (Button) findViewById(R.id.btnAfisareSetari);
 
         // Set onClick pentru buton start
         mBtnStartApp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startAplicatieClickActivity();
+            }
+        });
+
+        // Set onClick pentru buton afisare Setari
+        mBtnAfisareSetari.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startAfisareSetariActivity();
             }
         });
 
@@ -48,5 +59,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void startSetariActivity(){
         startActivity(new Intent(MainActivity.this, Setari.class));
+    }
+
+    private void startAfisareSetariActivity(){
+        startActivity(new Intent(MainActivity.this, afisare_setari.class));
     }
 }

@@ -9,6 +9,7 @@ import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -41,6 +42,7 @@ public class Adaugare extends AppCompatActivity {
 
 
     private String shared_preferences;
+    private ProgressBar progressBar;
 
         /*
     * Setare valori pentru prelucrare coeficient
@@ -82,6 +84,7 @@ public class Adaugare extends AppCompatActivity {
         this.caloriiConsumate    = (TextView) findViewById(R.id.txtCaloriiConsumateValue);
         this.coeficientDate      = (TextView) findViewById(R.id.txtCoeficient);
         this.mesajMAP            = (TextView) findViewById(R.id.textMesajMAP);
+        this.progressBar         = (ProgressBar) findViewById(R.id.mProgressBarAdaugare);
 
         setareDataCurenta();
         this.coeficientDate.setText(Double.toString(valoareCoeficient));
@@ -102,6 +105,7 @@ public class Adaugare extends AppCompatActivity {
 
                         valoareKilograme +=  number;
                         actualizareCoeficient();
+                        progressBar.setProgress(25);
                     }else{
                         Toast.makeText(getApplicationContext(), "Numarul de Kilograme nu poate fi mai mic de 50", Toast.LENGTH_LONG).show();
                         number = 0;
@@ -128,6 +132,7 @@ public class Adaugare extends AppCompatActivity {
                     int ore = Integer.parseInt(oreSport.getText().toString());
                     valoareOreSport +=  ore;
                     actualizareCoeficient();
+                    progressBar.setProgress(50);
                 }catch (Exception ex){
 
                 }
@@ -143,6 +148,7 @@ public class Adaugare extends AppCompatActivity {
                     int numarOreOdihna = Integer.parseInt(oreOdihna.getText().toString());
                     valoareOreOdihna +=  numarOreOdihna;
                     actualizareCoeficient();
+                    progressBar.setProgress(75);
                 }catch (Exception ex){
 
                 }
@@ -157,6 +163,7 @@ public class Adaugare extends AppCompatActivity {
                     int numarCaloriiConsumate = Integer.parseInt(caloriiConsumate.getText().toString());
                     valoareCaloriiConsumate += numarCaloriiConsumate;
                     actualizareCoeficient();
+                    progressBar.setProgress(100);
                 }catch (Exception ex){
 
                 }
@@ -218,10 +225,9 @@ public class Adaugare extends AppCompatActivity {
         editor.commit();
         Toast.makeText(getApplicationContext(), "Valorile au fost salvate", Toast.LENGTH_LONG).show();
         Date c = Calendar.getInstance().getTime();
-        SimpleDateFormat df = new SimpleDateFormat("dd-M-yyyy", Locale.getDefault());
-        String formattedDate = df.format(c);
+        String formattedDate = c.toString();
 
-        ActivitatePersonala activitatePersonala = new ActivitatePersonala(c, valoareKilograme, valoareOreSport, valoareOreOdihna, valoareCaloriiConsumate, valoareCoeficient);
+        ActivitatePersonala activitatePersonala = new ActivitatePersonala(formattedDate, valoareKilograme, valoareOreSport, valoareOreOdihna, valoareCaloriiConsumate, valoareCoeficient);
 
         DatabaseHelper myDbHelper = new DatabaseHelper(this.getApplicationContext());
         myDbHelper.inserareActivitate(activitatePersonala);

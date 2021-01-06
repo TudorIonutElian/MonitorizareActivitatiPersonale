@@ -3,14 +3,14 @@ package com.tie.map;
 import java.util.Date;
 
 public class ActivitatePersonala {
-    Date data_adaugarii;
+    String data_adaugarii;
     int numar_kilograme;
     int numar_ore_sport;
     int numar_ore_odihna;
     int numar_calorii_consumate;
     double valoare_coeficient;
 
-    public ActivitatePersonala(Date data_adaugarii, int numar_kilograme, int numar_ore_sport, int numar_ore_odihna, int numar_calorii_consumate, double valoare_coeficient) {
+    public ActivitatePersonala(String data_adaugarii, int numar_kilograme, int numar_ore_sport, int numar_ore_odihna, int numar_calorii_consumate, double valoare_coeficient) {
         this.data_adaugarii = data_adaugarii;
         this.numar_kilograme = numar_kilograme;
         this.numar_ore_sport = numar_ore_sport;
@@ -19,11 +19,11 @@ public class ActivitatePersonala {
         this.valoare_coeficient = valoare_coeficient;
     }
 
-    public Date getData_adaugarii() {
-        return data_adaugarii;
+    public String getData_adaugarii() {
+        return this.data_adaugarii;
     }
 
-    public void setData_adaugarii(Date data_adaugarii) {
+    public void setData_adaugarii(String data_adaugarii) {
         this.data_adaugarii = data_adaugarii;
     }
 

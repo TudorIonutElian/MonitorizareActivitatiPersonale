@@ -10,7 +10,7 @@
     <string name="titleImagini">Generare Imagini date MAP</string>
     <string name="imagine_map">Imagine MAP</string>
     <string name="adaugare_map">Adaugare MAP</string>
-    <string name="arhivare_map">Arhivare MAP</string>
+    <string name="preluare_json">Preluare JSON</string>
     <string name="vizualizare_map">Vizualizare MAP</string>
     <string name="generare_imagine">Generare Imagine</string>
     <string name="titleVizualizare">Vizualizare MAP</string>
@@ -32,6 +32,7 @@
     <string name="salvati_numar_calorii">Salvati Numar Calorii</string>
     <string name="salveaza_setari">Salveaza Setari</string>
     <string name="reseteaza_setari">Reseteaza Setari</string>
+    <string name="vizualizare_setari">Afisare Setari</string>
 
 
     <string name="shared_preferences">shared_preferences</string>
@@ -39,6 +40,21 @@
     <string name="salveaza_sport">salveaza_sport</string>
     <string name="salveaza_odihna">salveaza_odihna</string>
     <string name="salveaza_calorii">salveaza_calorii</string>
+    <string name="id_info">ID Info</string>
+    <string name="kilograme">Afisare Kilograme</string>
+    <string name="kilograme_info">Kilograme Info</string>
+    <string name="sport">Afisare Sport</string>
+    <string name="sport_info">Sport Info</string>
+    <string name="odihna">Afisare Odihna</string>
+    <string name="calorii">Afisare Calorii</string>
+    <string name="coeficient">Afisare Coeficient</string>
+    <string name="data">Afisare Data</string>
+    <string name="data_info">Data Info</string>
+    <string name="odihna_info">Odihna Info</string>
+    <string name="calorii_info">Calorii Info</string>
+    <string name="coeficient_info">Coeficient Info</string>
+    <string name="editeaza_inregistrare">Editeaza Inregistrare</string>
+    <string name="sterge_inregistrare">Sterge Inregistrare</string>
 
 
 </resources>

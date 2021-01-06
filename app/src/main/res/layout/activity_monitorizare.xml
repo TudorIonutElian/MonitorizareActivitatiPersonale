@@ -25,7 +25,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="264dp"
-        android:contentDescription="@string/arhivare_map"
+        android:contentDescription="@string/preluare_json"
         app:layout_constraintStart_toStartOf="@+id/leftGuide"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/arhivare" />
@@ -65,7 +65,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:background="@android:color/holo_blue_dark"
-        android:text="@string/arhivare_map"
+        android:text="@string/preluare_json"
         android:textColor="@android:color/background_light"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/rightGuide"
