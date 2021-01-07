@@ -5,25 +5,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.CalendarView;
-import android.widget.DatePicker;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 
 public class Vizualizare extends AppCompatActivity {
     private DatabaseHelper databaseHelper;
@@ -49,14 +40,14 @@ public class Vizualizare extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vizualizare);
 
-        data_info                           = (TextView) findViewById(R.id.v_ID_dataInfo);
-        kilograme_info                      = (TextView) findViewById(R.id.v_ID_kilogrameInfo);
-        sport_info                          = (TextView) findViewById(R.id.v_ID_sportInfo);
-        odihna_info                         = (TextView) findViewById(R.id.v_ID_odihnaInfo);
-        calorii_info                        = (TextView) findViewById(R.id.v_ID_caloriiInfo);
-        coeficient_info                     = (TextView) findViewById(R.id.v_ID_coeficientInfo);
+        data_info                           = (TextView) findViewById(R.id.edit_show_data);
+        kilograme_info                      = (TextView) findViewById(R.id.edit_show_kilograme);
+        sport_info                          = (TextView) findViewById(R.id.edit_show_oresport);
+        odihna_info                         = (TextView) findViewById(R.id.edit_show_oreodihna);
+        calorii_info                        = (TextView) findViewById(R.id.edit_show_calorii);
+        coeficient_info                     = (TextView) findViewById(R.id.edit_show_coeficient);
 
-        editeazaInregistrare                = (Button) findViewById(R.id.btnEditeaza);
+        editeazaInregistrare                = (Button) findViewById(R.id.btnSalveazaInregistrare);
         stergeInregistrare                  = (Button) findViewById(R.id.btnSterge);
 
         setTitle(R.string.titleVizualizare);

@@ -21,10 +21,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/v_ID_coeficientInfo" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_show_coeficient" />
 
     <TextView
-        android:id="@+id/v_ID_coeficientInfo"
+        android:id="@+id/edit_show_coeficient"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="292dp"
@@ -36,7 +36,7 @@
         app:layout_constraintTop_toTopOf="@+id/spinner" />
 
     <TextView
-        android:id="@+id/v_ID_caloriiInfo"
+        android:id="@+id/edit_show_calorii"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="252dp"
@@ -48,7 +48,7 @@
         app:layout_constraintTop_toTopOf="@+id/spinner" />
 
     <TextView
-        android:id="@+id/v_ID_odihnaInfo"
+        android:id="@+id/edit_show_oreodihna"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="212dp"
@@ -60,7 +60,7 @@
         app:layout_constraintTop_toTopOf="@+id/spinner" />
 
     <TextView
-        android:id="@+id/v_ID_dataInfo"
+        android:id="@+id/edit_show_data"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="96dp"
@@ -87,7 +87,7 @@
         app:layout_constraintTop_toTopOf="@+id/spinner" />
 
     <TextView
-        android:id="@+id/v_ID_sportInfo"
+        android:id="@+id/edit_show_oresport"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="176dp"
@@ -159,7 +159,7 @@
         app:layout_constraintTop_toTopOf="@+id/spinner" />
 
     <TextView
-        android:id="@+id/v_ID_kilogrameInfo"
+        android:id="@+id/edit_show_kilograme"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="136dp"
@@ -213,7 +213,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
     <Button
-        android:id="@+id/btnEditeaza"
+        android:id="@+id/btnSalveazaInregistrare"
         android:layout_width="0dp"
         android:layout_height="51dp"
         android:layout_marginStart="16dp"
@@ -222,10 +222,10 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:background="@color/colorGreen"
-        android:text="@string/editeaza_inregistrare"
+        android:text="@string/valoare_buton_editeaza"
         android:textColor="@android:color/background_light"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/v_ID_coeficientInfo" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_show_coeficient" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

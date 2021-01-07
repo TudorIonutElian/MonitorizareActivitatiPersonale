@@ -53,8 +53,13 @@
     <string name="odihna_info">Odihna Info</string>
     <string name="calorii_info">Calorii Info</string>
     <string name="coeficient_info">Coeficient Info</string>
-    <string name="editeaza_inregistrare">Editeaza Inregistrare</string>
+    <string name="editeaza_inregistrare">Salveaza Inregistrare</string>
     <string name="sterge_inregistrare">Sterge Inregistrare</string>
+    <string name="editare_activitate">Editare Activitate</string>
+    <string name="data_editare"></string>
+    <string name="raspuns_update_inregistrare">A fost actualizata inregistrarea!</string>
+    <string name="valoare_buton_editeaza">Editeaza Inregistrarea</string>
+    <string name="titluJson">Preluare Valori JSON</string>
 
 
 </resources>

@@ -56,21 +56,29 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-
+    // Preluare Toate inregistrarile
     public Cursor getData() {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor res =  db.rawQuery("SELECT * FROM " + MAP_TABLE_NAME , null);
         return res;
     }
 
-
+    // Get numar inregistrari
     public int numberOfRows(){
         SQLiteDatabase db = this.getReadableDatabase();
         int numRows = (int) DatabaseUtils.queryNumEntries(db, MAP_TABLE_NAME);
         return numRows;
     }
 
+    // Preluare Date activitate personala by ID
+    public Cursor getActivitateById(int id_editare){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res =  db.rawQuery("SELECT * FROM 'map_data' WHERE id = " + id_editare, null);
+        return res;
+    }
 
+
+    // Inserare activitate noua
     public boolean inserareActivitate(ActivitatePersonala activitatePersonala){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentActivitate = new ContentValues();
@@ -94,10 +102,27 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
 
     }
-
+    // Stergere activitate by ID
     public boolean stergereActivitate(int idStergere){
         SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL("DELETE FROM 'map_data' WHERE id = "+ idStergere +"");
+        db.close();
+        return true;
+    }
+
+    // Update actualizare
+    public boolean updateActivitate(int id_editare, ActivitatePersonala activitatePersonala){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues dataUpdate = new ContentValues();
+
+        dataUpdate.put("data", activitatePersonala.getData_adaugarii());
+        dataUpdate.put("kg", activitatePersonala.getNumar_kilograme());
+        dataUpdate.put("sport", activitatePersonala.getNumar_ore_sport());
+        dataUpdate.put("odihna", activitatePersonala.getNumar_ore_odihna());
+        dataUpdate.put("calorii", activitatePersonala.getNumar_calorii_consumate());
+        dataUpdate.put("coeficient", activitatePersonala.getValoare_coeficient());
+        db.update(MAP_TABLE_NAME, dataUpdate, "id = ?", new String[]{String.valueOf(id_editare)});
+
         db.close();
         return true;
     }
