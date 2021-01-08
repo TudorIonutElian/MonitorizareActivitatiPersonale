@@ -5,4 +5,27 @@
     <color name="colorAccent">#03DAC5</color>
     <color name="colorGreen">#2ecc71</color>
     <color name="colorRed">#e74c3c</color>
+
+    <color name="culoare_turqoise">#1abc9c</color>
+    <color name="culoare_emerald">#2ecc71</color>
+    <color name="culoare_peterriver">#3498db</color>
+    <color name="culoare_amethist">#9b59b6</color>
+    <color name="culoare_wetasphalt">#34495e</color>
+    <color name="culoare_greensea">#16a085</color>
+    <color name="culoare_nephritis">#27ae60</color>
+    <color name="culoare_belizehole">#2980b9</color>
+    <color name="culoare_wisteria">#8e44ad</color>
+    <color name="culoare_midnightblue">#2c3e50</color>
+    <color name="culoare_sunflower">#f1c40f</color>
+    <color name="culoare_carrot">#e67e22</color>
+    <color name="culoare_alizarin">#e74c3c</color>
+    <color name="culoare_clouds">#ecf0f1</color>
+    <color name="culoare_pinkglamour">#ff7675</color>
+    <color name="culoare_pikopink">#fd79a8</color>
+    <color name="culoare_americanriver">#636e72</color>
+    <color name="culoare_prunusavium">#e84393</color>
+    <color name="culoare_orangeville">#e17055</color>
+    <color name="culoare_shimoment">#a29bfe</color>
+    <color name="culoare_electronblue">#0984e3</color>
+    <color name="culoare_mintleaf">#00b894</color>
 </resources>

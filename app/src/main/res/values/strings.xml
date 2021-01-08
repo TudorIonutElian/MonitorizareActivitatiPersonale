@@ -8,7 +8,7 @@
     <string name="titleAdaugare">Adaugare date MAP</string>
     <string name="titleArhivare">Arhivare date MAP</string>
     <string name="titleImagini">Generare Imagini date MAP</string>
-    <string name="imagine_map">Imagine MAP</string>
+    <string name="imagine_map">Grafica CHART</string>
     <string name="adaugare_map">Adaugare MAP</string>
     <string name="preluare_json">Preluare JSON</string>
     <string name="vizualizare_map">Vizualizare MAP</string>
@@ -61,5 +61,12 @@
     <string name="valoare_buton_editeaza">Editeaza Inregistrarea</string>
     <string name="titluJson">Preluare Valori JSON</string>
 
+    <!-- STRINGS pentru lucrul cu baza de date -->
+    <string name="DATABASE_NAME">map.db</string>
+    <string name="TABLE_NAME">map_data</string>
+    <string name="TABLE_COLUMN_ID">id</string>
+    <string name="TABLE_COLUMN_DATA">data_adaugarii</string>
+    <string name="TABLE_COLUMN_KG">kg</string>
+    <string name="mesaj_arhivare">Mesaj Arhivare</string>
 
 </resources>

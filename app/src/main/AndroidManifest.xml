@@ -12,17 +12,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Imagine"></activity>
         <activity
             android:name=".EditareActivitate"
-            android:parentActivityName=".Vizualizare"/>
+            android:parentActivityName=".Vizualizare" />
         <activity
             android:name=".afisare_setari"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".Vizualizare"
-            android:parentActivityName=".Adaugare" />
-        <activity
-            android:name=".Imagine"
             android:parentActivityName=".Adaugare" />
         <activity
             android:name=".Arhivare"

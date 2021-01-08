@@ -58,6 +58,7 @@ public class Vizualizare extends AppCompatActivity {
         Cursor c = databaseHelper.getData();
         if(c.moveToFirst()){
             do {
+                lista_id.add(c.getInt(0));
                 String data = c.getString(1).toString();
                 int kilograme = c.getInt(2);
                 int sport = c.getInt(3);
@@ -67,7 +68,7 @@ public class Vizualizare extends AppCompatActivity {
 
                 ActivitatePersonala activitatePersonala = new ActivitatePersonala(data, kilograme, sport, odihna, calorii, coeficient);
                 lista_activitati_personale.add(activitatePersonala);
-                lista_id.add(c.getInt(0));
+
 
                 // Creare spinner adapter
                 ArrayAdapter spinner_adapter = new ArrayAdapter(this,android.R.layout.simple_spinner_item,lista_id);
@@ -122,9 +123,10 @@ public class Vizualizare extends AppCompatActivity {
         stergeInregistrare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int id_stergere = spinner.getId();
+                int id_stergere = Integer.parseInt(spinner.getSelectedItem().toString());
                 databaseHelper.stergereActivitate(id_stergere);
                 Toast.makeText(getApplicationContext(), "Inregistrarea cu nr. " + id_stergere + " a fost stearsa cu succes!", Toast.LENGTH_LONG).show();
+
             }
         });
 

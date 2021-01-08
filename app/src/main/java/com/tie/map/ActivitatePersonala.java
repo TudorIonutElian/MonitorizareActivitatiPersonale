@@ -1,5 +1,9 @@
 package com.tie.map;
 
+import android.content.ContentValues;
+import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
+
 import java.util.Date;
 
 public class ActivitatePersonala {
@@ -78,4 +82,5 @@ public class ActivitatePersonala {
                 ", valoare_coeficient=" + valoare_coeficient +
                 '}';
     }
+
 }

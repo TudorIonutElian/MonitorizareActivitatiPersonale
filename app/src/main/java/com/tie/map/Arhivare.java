@@ -1,16 +1,20 @@
 package com.tie.map;
 
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.util.Log;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
-import android.util.Log;
-
-import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.JsonHttpResponseHandler;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -18,8 +22,15 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
+import cz.msebera.android.httpclient.Header;
+
 public class Arhivare extends AppCompatActivity {
-    private RequestQueue mQueue;
+    private ArrayList<String> arrayList;
+    private ListView listView;
+    private TextView textView;
+    private ArrayList<ActivitatePersonala> activitatePersonalaArrayList;
+
+    String URL = "https://jsonkeeper.com/b/KAOL";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,13 +38,18 @@ public class Arhivare extends AppCompatActivity {
         setContentView(R.layout.activity_arhivare);
         setTitle(R.string.titluJson);
 
-        mQueue = Volley.newRequestQueue(this);
-        final ArrayList<ActivitatePersonala> activitatePersonalaArrayList = new ArrayList<ActivitatePersonala>();
+        listView = (ListView) findViewById(R.id.listViewZileJSON);
+        activitatePersonalaArrayList = new ArrayList<ActivitatePersonala>();
+        arrayList = new ArrayList<String>();
+        textView = findViewById(R.id.textMesaj);
 
-        String URL = "https://jsonkeeper.com/b/KAOL";
-        JsonObjectRequest mRequest = new JsonObjectRequest(Request.Method.GET, URL, null, new Response.Listener<JSONObject>() {
+        AsyncHttpClient asyncHttpClient = new AsyncHttpClient();
+        asyncHttpClient.get(URL, new JsonHttpResponseHandler(){
+
             @Override
-            public void onResponse(JSONObject response) {
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response){
+
+                textView.setText("Va rugam asteptati, datele sunt preluate....");
                 try {
                     JSONArray jsonArray = response.getJSONArray("activitati");
 
@@ -56,6 +72,14 @@ public class Arhivare extends AppCompatActivity {
 
                             ActivitatePersonala activitatePersonala = new ActivitatePersonala(data, kilograme, oresport, oreodihna, calorii, coeficient);
                             activitatePersonalaArrayList.add(activitatePersonala);
+                            arrayList.add(String.format(
+                                    "--- INFO - In data de : %s aveati %d kilograme, ati facut %d ore sport, v-ati odihnit %d ore, ati consumat un numar de %d calorii, iar la finalul zilei aveati un total de %.2f kilograme",
+                                    activitatePersonala.getData_adaugarii(),
+                                    activitatePersonala.getNumar_kilograme(),
+                                    activitatePersonala.getNumar_ore_sport(),
+                                    activitatePersonala.getNumar_ore_odihna(),
+                                    activitatePersonala.getNumar_calorii_consumate(),
+                                    activitatePersonala.getValoare_coeficient()));
                         }
 
                         JSONObject anul_curent_februarie = anul_curent.getJSONObject(1);
@@ -73,6 +97,14 @@ public class Arhivare extends AppCompatActivity {
 
                             ActivitatePersonala activitatePersonala = new ActivitatePersonala(data, kilograme, oresport, oreodihna, calorii, coeficient);
                             activitatePersonalaArrayList.add(activitatePersonala);
+                            arrayList.add(String.format(
+                                    "--- INFO - In data de : %s aveati %d kilograme, ati facut %d ore sport, v-ati odihnit %d ore, ati consumat un numar de %d calorii, iar la finalul zilei aveati un total de %.2f kilograme",
+                                    activitatePersonala.getData_adaugarii(),
+                                    activitatePersonala.getNumar_kilograme(),
+                                    activitatePersonala.getNumar_ore_sport(),
+                                    activitatePersonala.getNumar_ore_odihna(),
+                                    activitatePersonala.getNumar_calorii_consumate(),
+                                    activitatePersonala.getValoare_coeficient()));
 
                         }
 
@@ -91,21 +123,38 @@ public class Arhivare extends AppCompatActivity {
 
                             ActivitatePersonala activitatePersonala = new ActivitatePersonala(data, kilograme, oresport, oreodihna, calorii, coeficient);
                             activitatePersonalaArrayList.add(activitatePersonala);
-
+                            arrayList.add(String.format(
+                                    "--- INFO - In data de : %s aveati %d kilograme, ati facut %d ore sport, v-ati odihnit %d ore, ati consumat un numar de %d calorii, iar la finalul zilei aveati un total de %.2f kilograme",
+                                    activitatePersonala.getData_adaugarii(),
+                                    activitatePersonala.getNumar_kilograme(),
+                                    activitatePersonala.getNumar_ore_sport(),
+                                    activitatePersonala.getNumar_ore_odihna(),
+                                    activitatePersonala.getNumar_calorii_consumate(),
+                                    activitatePersonala.getValoare_coeficient()));
                         }
                     }
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
             }
-        }, new Response.ErrorListener() {
+
             @Override
-            public void onErrorResponse(VolleyError error) {
-                error.printStackTrace();
+            public void onFailure(int statusCode, Header[] headers, Throwable e, JSONObject response){
+                Log.e("Eroare: ", e.getMessage());
             }
         });
-        mQueue.add(mRequest);
+        final Handler handler = new Handler(Looper.getMainLooper());
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(Arhivare.this, android.R.layout.simple_list_item_1, arrayList);
+                textView.setVisibility(View.INVISIBLE);
+                listView.setAdapter(arrayAdapter);
+            }
+        }, 10000);
 
+        Log.d("Mesaj", "verifica " + activitatePersonalaArrayList.size());
     }
 
 }

@@ -8,4 +8,83 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!-- Tema Custom Creata 0.75 puncte. -->
+    <style name="turqoiseBackground" parent="TextAppearance.AppCompat">
+        <item name="android:background">@color/culoare_turqoise</item>
+    </style>
+
+    <style name="emeraldBackground" parent="TextAppearance.AppCompat">
+        <item name="android:background">@color/culoare_emerald</item>
+    </style>
+
+    <style name="amethistBackground" parent="TextAppearance.AppCompat">
+        <item name="android:background">@color/culoare_amethist</item>
+    </style>
+
+    <style name="wetAsphaltBackground" parent="TextAppearance.AppCompat">
+        <item name="android:background">@color/culoare_wetasphalt</item>
+    </style>
+
+    <style name="greenSeaBackground" parent="TextAppearance.AppCompat">
+        <item name="android:background">@color/culoare_greensea</item>
+    </style>
+
+    <style name="nephritisBackground" parent="TextAppearance.AppCompat">
+        <item name="android:background">@color/culoare_nephritis</item>
+    </style>
+
+    <style name="belizeholeBackground" parent="TextAppearance.AppCompat">
+        <item name="android:background">@color/culoare_belizehole</item>
+    </style>
+
+    <style name="wisteriaBackground" parent="TextAppearance.AppCompat">
+        <item name="android:background">@color/culoare_wisteria</item>
+    </style>
+
+    <style name="sunflowerBackground" parent="TextAppearance.AppCompat">
+        <item name="android:background">@color/culoare_sunflower</item>
+    </style>
+
+    <style name="carrotBackground" parent="TextAppearance.AppCompat">
+        <item name="android:background">@color/culoare_carrot</item>
+    </style>
+
+    <style name="alizarinBackground" parent="TextAppearance.AppCompat">
+        <item name="android:background">@color/culoare_alizarin</item>
+    </style>
+
+    <style name="cloudsBackground" parent="TextAppearance.AppCompat">
+        <item name="android:background">@color/culoare_clouds</item>
+    </style>
+
+    <style name="pikopinkBackground" parent="TextAppearance.AppCompat">
+        <item name="android:background">@color/culoare_pikopink</item>
+    </style>
+
+    <style name="americanriverBackground" parent="TextAppearance.AppCompat">
+        <item name="android:background">@color/culoare_americanriver</item>
+    </style>
+
+    <style name="prunusaviumBackground" parent="TextAppearance.AppCompat">
+        <item name="android:background">@color/culoare_prunusavium</item>
+    </style>
+
+    <style name="orangevilleBackground" parent="TextAppearance.AppCompat">
+        <item name="android:background">@color/culoare_orangeville</item>
+    </style>
+
+    <style name="shimomentBackground" parent="TextAppearance.AppCompat">
+        <item name="android:background">@color/culoare_shimoment</item>
+    </style>
+
+    <style name="electronblueBackground" parent="TextAppearance.AppCompat">
+        <item name="android:background">@color/culoare_electronblue</item>
+    </style>
+
+    <style name="mintleafBackground" parent="TextAppearance.AppCompat">
+        <item name="android:background">@color/culoare_mintleaf</item>
+    </style>
+
+
+
 </resources>

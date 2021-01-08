@@ -38,9 +38,6 @@ public class Adaugare extends AppCompatActivity {
     private Button buttonAdaugare;
     private Button buttonPreluare;
 
-    private DatabaseHelper bazaDate;
-
-
     private String shared_preferences;
     private ProgressBar progressBar;
 

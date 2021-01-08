@@ -2,8 +2,40 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/listViewDisplay"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Arhivare">
+
+    <TextView
+        android:id="@+id/textMesaj"
+        android:layout_width="0dp"
+        android:layout_height="17dp"
+        android:gravity="center_horizontal"
+        android:text="@string/mesaj_arhivare"
+        app:layout_constraintBottom_toBottomOf="@+id/listViewZileJSON"
+        app:layout_constraintEnd_toEndOf="@+id/listViewZileJSON"
+        app:layout_constraintStart_toStartOf="@+id/listViewZileJSON"
+        app:layout_constraintTop_toTopOf="@+id/listViewZileJSON" />
+
+    <ListView
+        app:layout_constraintBottom_toBottomOf="@+id/listViewDisplay"
+        app:layout_constraintEnd_toEndOf="@+id/listViewDisplay"
+        app:layout_constraintStart_toStartOf="@+id/listViewDisplay"
+        app:layout_constraintTop_toTopOf="@+id/listViewDisplay"
+        android:id="@+id/listViewZileJSON"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        tools:layout_editor_absoluteX="38dp">
+
+    </ListView>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.95" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

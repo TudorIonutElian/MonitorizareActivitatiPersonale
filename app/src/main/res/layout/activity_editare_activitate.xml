@@ -118,7 +118,7 @@
             android:layout_marginTop="32dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
-            android:background="@color/colorGreen"
+            android:background="@color/culoare_mintleaf"
             android:text="@string/editeaza_inregistrare"
             android:textColor="@android:color/background_light"
             app:layout_constraintEnd_toEndOf="parent"
