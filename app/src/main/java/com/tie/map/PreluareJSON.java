@@ -11,8 +11,6 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.android.volley.RequestQueue;
-import com.android.volley.toolbox.Volley;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
@@ -24,7 +22,7 @@ import java.util.ArrayList;
 
 import cz.msebera.android.httpclient.Header;
 
-public class Arhivare extends AppCompatActivity {
+public class PreluareJSON extends AppCompatActivity {
     private ArrayList<String> arrayList;
     private ListView listView;
     private TextView textView;
@@ -69,12 +67,6 @@ public class Arhivare extends AppCompatActivity {
                             int oreodihna           = ziua.getInt("numarOreOdihna");
                             int calorii             = ziua.getInt("numarCalorii");
                             double coeficient       = ziua.getDouble("coeficient");
-                            boolean working = false;
-                            if(kilograme > Integer.parseInt(Double.toString(coeficient))){
-                                working = true;
-
-                            }
-
                             ActivitatePersonala activitatePersonala = new ActivitatePersonala(data, kilograme, oresport, oreodihna, calorii, coeficient);
                             activitatePersonalaArrayList.add(activitatePersonala);
                             arrayList.add(String.format(
@@ -155,7 +147,7 @@ public class Arhivare extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(Arhivare.this, android.R.layout.simple_list_item_1, arrayList);
+                ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(PreluareJSON.this, android.R.layout.simple_list_item_1, arrayList);
                 textView.setVisibility(View.INVISIBLE);
                 listView.setAdapter(arrayAdapter);
             }

@@ -23,7 +23,7 @@
             android:name=".Vizualizare"
             android:parentActivityName=".Adaugare" />
         <activity
-            android:name=".Arhivare"
+            android:name=".PreluareJSON"
             android:parentActivityName=".Adaugare" />
         <activity
             android:name=".Adaugare"

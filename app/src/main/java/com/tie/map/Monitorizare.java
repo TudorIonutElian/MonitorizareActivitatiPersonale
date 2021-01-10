@@ -65,7 +65,7 @@ public class Monitorizare extends AppCompatActivity {
     }
 
     private void startArhivareActivity(){
-        startActivity(new Intent(getApplicationContext(), Arhivare.class));
+        startActivity(new Intent(getApplicationContext(), PreluareJSON.class));
     }
 
     private void startImagineActivity(){
