@@ -15,6 +15,7 @@ import java.util.HashMap;
 public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "map.db";
     public static final String MAP_TABLE_NAME = "map_data";
+    public static final String MAP_TABLE_NAME_WORKING = "map_data_WORKING";
     public static final String MAP_COLUMN_ID = "id";
     public static final String MAP_COLUMN_DATE = "data";
     public static final String MAP_COLUMN_KG = "kg";
@@ -48,7 +49,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                         MAP_COLUMN_SPORT + " integer, " +
                         MAP_COLUMN_ODIHNA + " integer, " +
                         MAP_COLUMN_CALORII + " integer, " +
-                        MAP_COLUMN_COEFCIENT + " decimal(2,2)" + ")"
+                        MAP_COLUMN_COEFCIENT + " decimal(2,2)" +")"
         );
     }
 
@@ -80,7 +81,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 null);
         return res;
     }
-
 
     // Inserare activitate noua
     public boolean inserareActivitate(ActivitatePersonala activitatePersonala){

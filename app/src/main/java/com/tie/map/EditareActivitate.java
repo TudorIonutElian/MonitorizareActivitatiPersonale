@@ -72,16 +72,5 @@ public class EditareActivitate extends AppCompatActivity {
 
             }
         });
-
-
-        /*
-        *  afisare ce inregistrare dorim sa editam
-        *  creare campuri
-        *  preluare valori
-        *  creare functie de update
-        *  returnare la activitatea de vizualizare
-        *
-        *
-        * */
     }
 }

@@ -69,6 +69,11 @@ public class Arhivare extends AppCompatActivity {
                             int oreodihna           = ziua.getInt("numarOreOdihna");
                             int calorii             = ziua.getInt("numarCalorii");
                             double coeficient       = ziua.getDouble("coeficient");
+                            boolean working = false;
+                            if(kilograme > Integer.parseInt(Double.toString(coeficient))){
+                                working = true;
+
+                            }
 
                             ActivitatePersonala activitatePersonala = new ActivitatePersonala(data, kilograme, oresport, oreodihna, calorii, coeficient);
                             activitatePersonalaArrayList.add(activitatePersonala);
@@ -95,6 +100,7 @@ public class Arhivare extends AppCompatActivity {
                             int calorii             = ziua.getInt("numarCalorii");
                             double coeficient       = ziua.getDouble("coeficient");
 
+
                             ActivitatePersonala activitatePersonala = new ActivitatePersonala(data, kilograme, oresport, oreodihna, calorii, coeficient);
                             activitatePersonalaArrayList.add(activitatePersonala);
                             arrayList.add(String.format(
@@ -120,6 +126,7 @@ public class Arhivare extends AppCompatActivity {
                             int oreodihna           = ziua.getInt("numarOreOdihna");
                             int calorii             = ziua.getInt("numarCalorii");
                             double coeficient       = ziua.getDouble("coeficient");
+
 
                             ActivitatePersonala activitatePersonala = new ActivitatePersonala(data, kilograme, oresport, oreodihna, calorii, coeficient);
                             activitatePersonalaArrayList.add(activitatePersonala);
@@ -153,8 +160,6 @@ public class Arhivare extends AppCompatActivity {
                 listView.setAdapter(arrayAdapter);
             }
         }, 10000);
-
-        Log.d("Mesaj", "verifica " + activitatePersonalaArrayList.size());
     }
 
 }

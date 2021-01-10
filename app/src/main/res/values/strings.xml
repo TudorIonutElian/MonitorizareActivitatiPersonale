@@ -75,8 +75,15 @@
 
     <!-- STRINGS pentru preferences -->
     <string name="preferences_kilograme">numar_kilograme</string>
+    <string name="preferences_sport">numar_ore_sport</string>
     <string name="preferences_setari_salvate">Setarile au fost salvate</string>
-    <string name="a">numar_kilograme</string>
+    <string name="set_mesaj_text_DA">DA</string>
+    <string name="set_mesaj_text_NU">NU</string>
+    <string name="preferences_numar_kilograme_text">NU</string>
+    <string name="imagine_text_top">Valori Kilograme Inregistrari</string>
+    <string name="imagine_column_id">ID Inregistrare</string>
+    <string name="imagine_column_kg">Valoare Kilograme</string>
+
 
 
 

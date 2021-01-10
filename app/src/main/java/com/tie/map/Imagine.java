@@ -65,7 +65,7 @@ public class Imagine extends AppCompatActivity {
                 .format("kg{%Value}{groupsSeparator: }");
 
         cartesian.animation(true);
-        cartesian.title("Valori Kilograme Inregistrari");
+        cartesian.title(getString(R.string.imagine_text_top));
 
         cartesian.yScale().minimum(0d);
 
@@ -74,8 +74,8 @@ public class Imagine extends AppCompatActivity {
         cartesian.tooltip().positionMode(TooltipPositionMode.POINT);
         cartesian.interactivity().hoverMode(HoverMode.BY_X);
 
-        cartesian.xAxis(0).title("ID Inregistrare");
-        cartesian.yAxis(0).title("Valoare Kilograme");
+        cartesian.xAxis(0).title(getString(R.string.imagine_column_id));
+        cartesian.yAxis(0).title(getString(R.string.imagine_column_kg));
 
         anyChartView.setChart(cartesian);
 

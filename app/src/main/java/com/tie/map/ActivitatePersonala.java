@@ -14,6 +14,7 @@ public class ActivitatePersonala {
     int numar_calorii_consumate;
     double valoare_coeficient;
 
+
     public ActivitatePersonala(String data_adaugarii, int numar_kilograme, int numar_ore_sport, int numar_ore_odihna, int numar_calorii_consumate, double valoare_coeficient) {
         this.data_adaugarii = data_adaugarii;
         this.numar_kilograme = numar_kilograme;
@@ -74,7 +75,7 @@ public class ActivitatePersonala {
     @Override
     public String toString() {
         return "ActivitatePersonala{" +
-                "data_adaugarii=" + data_adaugarii +
+                "data_adaugarii='" + data_adaugarii + '\'' +
                 ", numar_kilograme=" + numar_kilograme +
                 ", numar_ore_sport=" + numar_ore_sport +
                 ", numar_ore_odihna=" + numar_ore_odihna +
@@ -82,5 +83,4 @@ public class ActivitatePersonala {
                 ", valoare_coeficient=" + valoare_coeficient +
                 '}';
     }
-
 }

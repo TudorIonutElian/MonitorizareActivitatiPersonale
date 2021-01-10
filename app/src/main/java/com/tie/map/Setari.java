@@ -73,10 +73,10 @@ public class Setari extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 booleanSwitchKilograme = salveazaNumarKilograme.isChecked();
                 if(booleanSwitchKilograme){
-                    salveazaNumarKilograme.setText("DA");
+                    salveazaNumarKilograme.setText(getText(R.string.set_mesaj_text_DA));
                     salveazaNumarKilograme.setTextColor(getResources().getColor(R.color.colorGreen));
                 }else {
-                    salveazaNumarKilograme.setText("NU");
+                    salveazaNumarKilograme.setText(getText(R.string.set_mesaj_text_NU));
                     salveazaNumarKilograme.setTextColor(getResources().getColor(R.color.colorRed));
                 }
             }
@@ -87,10 +87,10 @@ public class Setari extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 booleanSwitchOreSport = salveazaNumarOreSport.isChecked();
                 if(booleanSwitchOreSport){
-                    salveazaNumarOreSport.setText("DA");
+                    salveazaNumarOreSport.setText(getText(R.string.set_mesaj_text_DA));
                     salveazaNumarOreSport.setTextColor(getResources().getColor(R.color.colorGreen));
                 }else {
-                    salveazaNumarOreSport.setText("NU");
+                    salveazaNumarOreSport.setText(getText(R.string.set_mesaj_text_NU));
                     salveazaNumarOreSport.setTextColor(getResources().getColor(R.color.colorRed));
                 }
             }
@@ -101,10 +101,10 @@ public class Setari extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 booleanSwitchOreOdihna = salveazaNumarOreOdihna.isChecked();
                 if(booleanSwitchOreOdihna){
-                    salveazaNumarOreOdihna.setText("DA");
+                    salveazaNumarOreOdihna.setText(getText(R.string.set_mesaj_text_DA));
                     salveazaNumarOreOdihna.setTextColor(getResources().getColor(R.color.colorGreen));
                 }else {
-                    salveazaNumarOreOdihna.setText("NU");
+                    salveazaNumarOreOdihna.setText(getText(R.string.set_mesaj_text_NU));
                     salveazaNumarOreOdihna.setTextColor(getResources().getColor(R.color.colorRed));
                 }
             }
@@ -115,10 +115,10 @@ public class Setari extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 booleanSwitchCalorii = salveazaNumarCalorii.isChecked();
                 if(booleanSwitchCalorii){
-                    salveazaNumarCalorii.setText("DA");
+                    salveazaNumarCalorii.setText(getText(R.string.set_mesaj_text_DA));
                     salveazaNumarCalorii.setTextColor(getResources().getColor(R.color.colorGreen));
                 }else {
-                    salveazaNumarCalorii.setText("NU");
+                    salveazaNumarCalorii.setText(getText(R.string.set_mesaj_text_NU));
                     salveazaNumarCalorii.setTextColor(getResources().getColor(R.color.colorRed));
                 }
             }
@@ -146,10 +146,10 @@ public class Setari extends AppCompatActivity {
         // Setare Kilograme
         boolean setareKilograme = sharedPreferences.getBoolean(SALVEAZA_KILOGRAME, false);
         if(setareKilograme){
-            salveazaNumarKilograme.setText("DA");
+            salveazaNumarKilograme.setText(getText(R.string.set_mesaj_text_DA));
             salveazaNumarKilograme.setTextColor(getResources().getColor(R.color.colorGreen));
         }else {
-            salveazaNumarKilograme.setText("NU");
+            salveazaNumarKilograme.setText(getText(R.string.set_mesaj_text_NU));
             salveazaNumarKilograme.setTextColor(getResources().getColor(R.color.colorRed));
         }
         salveazaNumarKilograme.setChecked(setareKilograme);
@@ -157,10 +157,10 @@ public class Setari extends AppCompatActivity {
         // Setare sport
         boolean setareSport = sharedPreferences.getBoolean(SALVEAZA_SPORT, false);
         if(setareSport){
-            salveazaNumarOreSport.setText("DA");
+            salveazaNumarOreSport.setText(getText(R.string.set_mesaj_text_DA));
             salveazaNumarOreSport.setTextColor(getResources().getColor(R.color.colorGreen));
         }else {
-            salveazaNumarOreSport.setText("NU");
+            salveazaNumarOreSport.setText(getText(R.string.set_mesaj_text_NU));
             salveazaNumarOreSport.setTextColor(getResources().getColor(R.color.colorRed));
         }
         salveazaNumarOreSport.setChecked(setareSport);
@@ -168,10 +168,10 @@ public class Setari extends AppCompatActivity {
         // Setare odihna
         boolean setareOdihna = sharedPreferences.getBoolean(SALVEAZA_ODIHNA, false);
         if(setareOdihna){
-            salveazaNumarOreOdihna.setText("DA");
+            salveazaNumarOreOdihna.setText(getText(R.string.set_mesaj_text_DA));
             salveazaNumarOreOdihna.setTextColor(getResources().getColor(R.color.colorGreen));
         }else {
-            salveazaNumarOreOdihna.setText("NU");
+            salveazaNumarOreOdihna.setText(getText(R.string.set_mesaj_text_NU));
             salveazaNumarOreOdihna.setTextColor(getResources().getColor(R.color.colorRed));
         }
         salveazaNumarOreOdihna.setChecked(setareOdihna);
@@ -179,10 +179,10 @@ public class Setari extends AppCompatActivity {
         // Setare calorii
         boolean setareCalorii = sharedPreferences.getBoolean(SALVEAZA_CALORII, false);
         if(setareCalorii){
-            salveazaNumarCalorii.setText("DA");
+            salveazaNumarCalorii.setText(getText(R.string.set_mesaj_text_DA));
             salveazaNumarCalorii.setTextColor(getResources().getColor(R.color.colorGreen));
         }else {
-            salveazaNumarCalorii.setText("NU");
+            salveazaNumarCalorii.setText(getText(R.string.set_mesaj_text_NU));
             salveazaNumarCalorii.setTextColor(getResources().getColor(R.color.colorRed));
         }
         salveazaNumarCalorii.setChecked(setareCalorii);

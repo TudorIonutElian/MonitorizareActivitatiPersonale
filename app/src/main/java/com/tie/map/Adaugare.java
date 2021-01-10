@@ -175,7 +175,7 @@ public class Adaugare extends AppCompatActivity {
         kilograme.setText(String.valueOf(preferences.getInt(getString(R.string.preferences_kilograme), 0)));
         valoareKilograme = preferences.getInt("numar_kilograme", 0);
 
-        oreSport.setText(String.valueOf(preferences.getInt("numar_ore_sport", 0)));
+        oreSport.setText(String.valueOf(preferences.getInt(getString(R.string.preferences_sport), 0)));
         valoareOreSport = preferences.getInt("numar_ore_sport", 0);
 
         oreOdihna.setText(String.valueOf(preferences.getInt("numar_ore_odihna", 0)));
