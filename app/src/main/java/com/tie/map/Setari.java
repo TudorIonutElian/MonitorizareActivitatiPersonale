@@ -137,7 +137,7 @@ public class Setari extends AppCompatActivity {
 
         editor.commit();
         this.finish();
-        Toast.makeText(getApplicationContext(), "Setarile au fost salvate", Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), getText(R.string.preferences_setari_salvate), Toast.LENGTH_LONG).show();
     }
 
 /* ------ FUNCTIE PENTRU PRELUAREA SETARILOR DIN FISIERUL DE PREFERINTE ------ */

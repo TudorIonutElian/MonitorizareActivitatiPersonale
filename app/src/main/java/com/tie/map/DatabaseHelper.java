@@ -1,24 +1,18 @@
 package com.tie.map;
 
-import java.sql.Date;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Locale;
-
 import android.content.ContentValues;
 import android.content.Context;
-import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.DatabaseUtils;
-import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 import androidx.annotation.Nullable;
 
-public class DatabaseHelper extends SQLiteOpenHelper {
+import java.util.HashMap;
 
+public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "map.db";
     public static final String MAP_TABLE_NAME = "map_data";
     public static final String MAP_COLUMN_ID = "id";

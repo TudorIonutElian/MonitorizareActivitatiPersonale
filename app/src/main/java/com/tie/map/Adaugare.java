@@ -104,7 +104,7 @@ public class Adaugare extends AppCompatActivity {
                         actualizareCoeficient();
                         progressBar.setProgress(25);
                     }else{
-                        Toast.makeText(getApplicationContext(), "Numarul de Kilograme nu poate fi mai mic de 50", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), getText(R.string.avertizare_numar_minim_kg), Toast.LENGTH_LONG).show();
                         number = 0;
                         kilograme.setText(Integer.toString(number));
 
@@ -169,10 +169,10 @@ public class Adaugare extends AppCompatActivity {
         });
     }
     public void preluareValoriIeri(){
-        Toast.makeText(getApplicationContext(), "Au fost preluate valorile introduse ieri! Actualizarea se va face automat", Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), getText(R.string.informare_preluare_valori), Toast.LENGTH_LONG).show();
         SharedPreferences preferences = getSharedPreferences(shared_preferences, MODE_PRIVATE);
 
-        kilograme.setText(String.valueOf(preferences.getInt("numar_kilograme", 0)));
+        kilograme.setText(String.valueOf(preferences.getInt(getString(R.string.preferences_kilograme), 0)));
         valoareKilograme = preferences.getInt("numar_kilograme", 0);
 
         oreSport.setText(String.valueOf(preferences.getInt("numar_ore_sport", 0)));

@@ -69,4 +69,18 @@
     <string name="TABLE_COLUMN_KG">kg</string>
     <string name="mesaj_arhivare">Mesaj Arhivare</string>
 
+
+    <string name="avertizare_numar_minim_kg">Numarul de kilograme nu poate fi mai mic de 50</string>
+    <string name="informare_preluare_valori">Au fost preluate valorile introduse ieri! Actualizarea se va face automat</string>
+
+    <!-- STRINGS pentru preferences -->
+    <string name="preferences_kilograme">numar_kilograme</string>
+    <string name="preferences_setari_salvate">Setarile au fost salvate</string>
+    <string name="a">numar_kilograme</string>
+
+
+
+
+
+
 </resources>
